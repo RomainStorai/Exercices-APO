@@ -5,11 +5,20 @@ import java.util.ArrayList;
 public class Etudiant {
 
     String nom, prenom;
+    int promo;
     ArrayList<Double> notes = new ArrayList<>();
 
-    public Etudiant(String prenom, String nom, int id) {
+    /**
+     * Constructeur d'un étudiant
+     *
+     * @param prenom de l'étudiant
+     * @param nom    de l'étudiant
+     * @param promo  de l'étudiant
+     */
+    public Etudiant(String prenom, String nom, int promo) {
         this.nom = nom;
         this.prenom = prenom;
+        this.promo = promo;
     }
 
     /**
@@ -27,6 +36,9 @@ public class Etudiant {
      * @return moyenne
      */
     public double moyenne() {
+        if (notes.isEmpty())
+            return 0;
+
         double somme = 0;
         for (Double note : notes)
             somme += note;
