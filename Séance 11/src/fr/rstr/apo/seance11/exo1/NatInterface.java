@@ -201,7 +201,7 @@ public interface NatInterface {
      * @param y y Nat y leq this.
      * @return this - y
      */
-    public NatInterface subtract(NatInterface y);
+    public NatInterface subtract(NatInterface y) throws Exception;
 
     /**
      * Lower or equals than.
